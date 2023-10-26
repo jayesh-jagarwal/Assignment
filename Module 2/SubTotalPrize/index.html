@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Info</th>
+                <th>Quantity</th>
+                <th>Price(per unit)</th>
+                <th>Price (subtotal)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fortunata Window Hardware - Decorative Hoaldback-Mocha</td>
+                <td><input type="number" class="quantity-input" value="1"></td>
+                <td>$29.99</td>
+                <td class="subtotal">$29.99</td>
+                <td><button class="remove-button">Remove</button></td>
+            </tr>
+            <tr>
+                <td>Woven Trellis Window Hardware - Clip Rings-Brooze</td>
+                <td><input type="number" class="quantity-input1" value="1"></td>
+                <td>$12.99</td>
+                <td class="subtotal1">$12.99</td>
+                <td><button class="remove-button1">Remove</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="subtotal2">$0</td>
+                <td></td>
+            </tr>
+            <!-- Add more rows for other items here -->
+        </tbody>
+    </table>
+</body>
+<script src="script.js"></script>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtotal Calculator</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Product Info</th>
+            <th>Quantity</th>
+            <th>Price (per unit)</th>
+            <th>Price (subtotal)</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Fortunata Window Hardware - Decorative Hoaldback-Mocha </td>
+            <td><input type="number" id="quantity1" oninput="calculateSubtotal(1)"></td>
+            <td>$29.99</td>
+            <td id="subtotal1">$0</td>
+            <td><button onclick="rm()" class="remove-button style="background-color: orange;">Remove</button></td>
+        </tr>
+        <tr>
+            <td>Woven Trellis Window Hardware - Clip Rings-Brooze</td>
+            <td><input type="number" id="quantity2" oninput="calculateSubtotal(2)"></td>
+            <td>$12.99</td>
+            <td id="subtotal2">$0</td>
+            <td><button onclick="rm()" style="background-color: orange;">Remove</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="subtotal2"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateSubtotal(itemId) {
+            const quantity = document.getElementById(`quantity${itemId}`).value;
+            const pricePerItem = itemId === 1 ? 29.99 : 12.99; // Set the price per item based on the item ID
+            const subtotal = quantity * pricePerItem;
+            document.getElementById(`subtotal${itemId}`).textContent = "$" +subtotal;
+        }
+        const removeButtons = document.querySelectorAll('.remove-button');
+        function rm(){
+            subtotal= subtotal-1;
+        }
+
+    </script>
+</body>
+</html> -->
+
+
+

@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form action="#">
+        <input type="email" id="login-email" placeholder="Enter your email">
+        <input type="password" id="login-password" placeholder="Enter your password">
+        <a href="#">Forgot password?</a>
+        <input type="button" onclick="login()" class="button" value="Login">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+         <label for="check">Registration</label>
+        </span>
+      </div>
+    </div>
+    <div class="registration form">
+      <header>Registration</header>
+      <form action="#">
+        <input type="email" id="register-email" placeholder="Enter your email">
+        <input type="password" id="register-password" placeholder="Create a password">
+        <!-- <input type="password" placeholder="Confirm your password"> -->
+        <!-- <button class="button" onclick="register()">Register</button> -->
+        <input type="button" onclick="register()" class="button" value="Register">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check" >Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Form | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form action="#">
+      <h2>Login</h2>
+        <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html> -->

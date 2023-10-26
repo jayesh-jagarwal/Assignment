@@ -1,0 +1,126 @@
+
+
+•  What is JavaScript Output method ?
+
+Ans :- In JavaScript, you can use several methods to produce output that can be 
+displayed to the user.The most common methods for outputting data in JavaScript are:
+
+1. document.write(): This method writes HTML expressions or JavaScript code to a document.
+                     It's important to note that using document.write() after the document
+                     has fully loaded can overwrite the entire document, so it's generally
+                     not recommended for most situations.
+
+
+2. console.log(): This method is used to output data to the console, which is a developer 
+                  tool that can be accessed in most web browsers. It's typically used for
+                  debugging purposes.
+
+3. alert(): This method displays a dialog box with a specified message and an OK button.
+             It's often used for simple user notifications.
+
+4. DOM Manipulation: You can use JavaScript to manipulate the Document Object Model (DOM)
+                     and update the content of HTML elements directly.
+
+5. Template Literals: With the introduction of ECMAScript 6 (ES6),template literals provide
+                      a more readable and convenient way to concatenate strings and variables.                     
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+• How to used JavaScript Output method? 
+
+Ans :- 
+
+1. Using document.write() u  can writes content directly to the HTML document.
+
+document.write("Hello, World!");
+
+
+2. Using console.log() for Console Output: 
+
+console.log("Hello, World!"); // Output: Hello, World!
+
+3. Using alert() for Popup Dialog Boxes:
+
+alert("Hello, World!"); // Displays a popup with "Hello, World!" message
+
+4. Using the HTML DOM
+
+For example, if you have an element with an id of "output" in your HTML file,
+you can set its content using JavaScript:
+
+<div id="output"></div>
+
+document.getElementById("output").innerHTML = "Hello, World!";
+
+5. Using Template Literals:
+
+Template literals (introduced in ECMAScript 6) allow you to embed expressions inside string
+literals, which can be useful for generating dynamic content.
+
+let name = "World";
+console.log(`Hello, ${name}!`);
+
+------------------------------------------------------------------------------------------------------------------
+
+• How to used JavaScript Events to do all examples? 
+
+Example 1: Click Event - When mouse click on an element
+
+<button id="myButton">Click me!</button>
+
+<script>
+  document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+  });
+</script>
+
+Example 2: Mouseover Event - When the cursor of the mouse comes over the element
+
+<div id="myElement">Hover over me!</div>
+
+<script>
+  document.getElementById("myElement").addEventListener("mouseover", function() {
+    alert("Mouse over the element!");
+  });
+</script>
+
+Example 3: Input Event -  whenever there is a change in the input field with the id 
+           "myInput", the current value of the input will be logged to the console.
+
+<input type="text" id="myInput">
+
+<script>
+  document.getElementById("myInput").addEventListener("input", function() {
+    var inputValue = document.getElementById("myInput").value;
+    console.log("Input value: " + inputValue);
+  });
+</script>
+
+Example 3: Load Events - When the page has been loaded
+
+<body onload="myFunction()">
+<h2>Hello World!</h2>
+</body>
+
+<script>
+function myFunction() {
+  alert("Page is loaded");
+}
+</script>
+
+Example 4: Form Submission Event - When user click on Submit button 
+
+<form id="myForm">
+  <input type="text" name="username">
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents the form from submitting traditionally
+    var username = document.forms["myForm"]["username"].value;
+    alert("Submitted: " + username);
+  });
+</script>
