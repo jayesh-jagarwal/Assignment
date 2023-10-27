@@ -22,5 +22,12 @@ button {
 }
 
 button:hover {
-    background-color: #ff2600;
+    background-color: #f3ebea;
+    color: black;
+}
+
+
+td img {
+    width: 100px;
+    height: 100px;
 }
