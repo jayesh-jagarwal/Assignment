@@ -1,0 +1,58 @@
+
+* Explain Life cycle in Class Component and functional component with Hooks
+
+Ans:- In React, components can be created using two different approaches: Class Components 
+      and Functional Components with Hooks. Both approaches can manage the component's 
+      lifecycle, but they do it in slightly different ways. Let me explain the lifecycle in 
+      both types of components.
+
+      Class Components:
+
+      Class Components have been a fundamental way of creating components in React for a long 
+      time. They have a built-in lifecycle with various methods that you can override to 
+      perform actions at different stages of a component's life. Here are some of the key 
+      lifecycle methods in class components:
+
+      1. constructor(props): This is the constructor method where you initialize state and 
+      bind methods. It is called before the component is mounted.
+
+      2. componentDidMount(): This method is called after the component is rendered in the 
+      DOM. It is often used to perform tasks like data fetching, subscriptions, or manually 
+      changing the DOM.
+
+      3. shouldComponentUpdate(nextProps, nextState): This method is called before rendering 
+      when new props or state are received. It allows you to control if the component should 
+      re-render by returning either true or false.
+
+      4. componentDidUpdate(prevProps, prevState): This method is called after a component's 
+      updates are flushed to the DOM. It is used to interact with the DOM or perform actions 
+      after the component is updated.
+
+      5. componentWillUnmount(): This method is called before a component is removed from the 
+      DOM. It can be used to perform cleanup tasks like cancelling network requests or cleaning 
+      up subscriptions.
+
+
+      Functional Components with Hooks:
+
+      Functional Components were traditionally stateless, but with the introduction of Hooks 
+      in React 16.8, functional components can now manage state and side effects as well. 
+      Hooks provide a way to use state and other React features without writing a class.
+
+      Here are the equivalent lifecycle methods in functional components using Hooks:
+
+      1. useState(initialState): This Hook allows functional components to manage state. It returns the current state and a function to update it.
+
+      2. useEffect(() => {}, [dependencies]): This Hook performs side effects in functional components. It combines the functionality of componentDidMount, componentDidUpdate, and componentWillUnmount. The function inside useEffect is called after the component renders, and you can specify dependencies to control when the effect runs.
+
+      3. useContext(Context): This Hook allows functional components to subscribe to React context without introducing nesting.
+
+      4. useReducer(reducer, initialState): This Hook is an alternative to useState. It is used for more complex state logic. It returns the current state and a dispatch function.
+
+      5. useCallback(callback, dependencies): This Hook returns a memoized version of the callback function that only changes if one of the dependencies has changed. It is useful for optimizing performance.
+
+      6. useMemo(() => computedValue, [dependencies]): This Hook memoizes the result of a computation. It helps in optimizing expensive calculations.
+
+      7. useRef(initialValue): This Hook returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). It is useful for persisting values across renders without causing re-renders.
+
+      Functional components with Hooks provide a more concise and expressive way to manage component lifecycles and state, making React development more efficient and enjoyable.
