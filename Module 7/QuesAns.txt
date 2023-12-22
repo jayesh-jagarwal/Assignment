@@ -1,0 +1,97 @@
+ • What is Redux?
+
+
+Redux is an open-source JavaScript library for managing the state of an application. 
+It is commonly used with libraries and frameworks like React, though it can be used with 
+other libraries as well. Redux provides a predictable state container for JavaScript applications, 
+making it easier to manage the state of your application in a consistent and predictable way.
+
+The core concept of Redux is to store the entire state of an application in a single JavaScript object, 
+called the "store." The state is read-only, and any changes to the state are made by dispatching actions. 
+An action is a plain JavaScript object that describes a change in the application state. 
+Reducers are functions that specify how the state changes in response to actions. 
+They take the current state and an action as arguments and return a new state.
+
+Key concepts in Redux:
+
+Store: The store holds the state of the application. You can think of it as a single source of truth.
+
+Action: Actions are plain JavaScript objects that describe what happened in the application. They are the only source of information for the store.
+
+Reducer: A reducer is a pure function that takes the current state and an action as arguments and returns a new state. Reducers define how the state changes in response to actions.
+
+Dispatch: The dispatch function is used to send actions to the store. When an action is dispatched, the store calls the corresponding reducer, and the state is updated.
+
+Middleware: Middleware provides a way to extend the basic functionality of Redux. It can be used for tasks like logging actions, handling asynchronous operations, etc.
+
+Redux promotes a unidirectional data flow, making it easier to understand how data changes in an application over time. 
+While Redux can add some boilerplate to your code, it can be especially useful in large-scale applications where managing 
+state can become complex. Additionally, the time-travel debugging feature, enabled by the immutability of state and the 
+logging of actions, is often cited as one of the advantages of using Redux.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+• What is Redux Thunk used for?
+
+
+Redux Thunk is a middleware for Redux, a library for managing the state of JavaScript applications. 
+It allows you to write action creators that return functions instead of plain action objects. 
+These functions can perform asynchronous operations and then dispatch actions based on the results.
+
+In Redux, action creators are functions that return action objects, which are then dispatched to update the state. However, in real-world applications, there are scenarios where you need to perform asynchronous tasks, such as making API calls, before dispatching an action. Redux Thunk enables this by allowing action creators to return functions with access to the 'dispatch' and 'getState' functions.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+
+• What is Pure Component? When to use Pure Component over 
+Component?
+
+
+
+In React, a Pure Component is a class component provided by React that extends React.PureComponent instead of React.Component. The main difference between a regular Component and a PureComponent lies in how they handle the shouldComponentUpdate method.
+
+React.Component:
+The shouldComponentUpdate method in a regular Component always returns true by default.
+When a component receives new props or state, it re-renders regardless of whether the new props or state are the same as the current ones.
+React.PureComponent:
+React.PureComponent provides a default implementation of shouldComponentUpdate.
+The shouldComponentUpdate method in a PureComponent performs a shallow comparison of the current props and state with the next props and state.
+If the props and state have not changed (according to the shallow comparison), shouldComponentUpdate returns false, and the component does not re-render. This can lead to performance optimizations, especially in scenarios where a component is frequently re-rendered with the same props and state.
+When to Use PureComponent Over Component:
+Performance Optimization:
+
+Use PureComponent when you want to optimize the performance of your application by preventing unnecessary re-renders.
+If a component's render output is determined solely by its props and state, and a shallow comparison is sufficient to determine if it should update, PureComponent can be beneficial.
+Avoiding Unnecessary Renders:
+
+If a component is rendering the same output for the same props and state, using PureComponent can help avoid unnecessary renders, leading to better performance.
+Simple Prop and State Structures:
+
+PureComponent is most effective when the props and state have a simple structure, such as primitive values or small objects. It may not work as expected if the props or state contain complex nested objects or arrays, as the shallow comparison may not catch changes deep within these structures.
+Considerations:
+Shallow Comparison Limitation:
+
+The effectiveness of PureComponent depends on the use case. If a component relies on deep object comparisons or has complex logic in shouldComponentUpdate, it might not provide the desired performance benefits.
+Function Props:
+
+If a component receives functions as props, using PureComponent might not be suitable because a new function reference is created on each render, leading to unnecessary re-renders. In such cases, a regular Component with custom shouldComponentUpdate logic may be more appropriate.
+In summary, use React.PureComponent when you want a simple and automatic way to optimize performance by avoiding unnecessary renders based on a shallow comparison of props and state. However, be aware of its limitations and consider the specific characteristics of your components and their use cases.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+• What is the second argument that can optionally be passed 
+tosetState and what is its purpose?
+
+
+
+In React, the setState function is used to update the state of a component. The setState function can take two arguments: an object that represents the new state or a function that returns the new state. The second argument, which is optional, is a callback function that will be executed once the setState operation is completed and the component has been re-rendered.
+
+Here is the basic syntax for setState:
+
+setState(updater, [callback]);
+
+updater: This can be an object or a function. If it's an object, it represents the partial state that should be merged into the current state. If it's a function, it receives the current state and props as arguments and should return an object representing the partial state changes.
+
+callback (optional): This is a function that will be invoked after the setState operation is complete and the component has been re-rendered. It is often used for performing actions that depend on the updated state.
